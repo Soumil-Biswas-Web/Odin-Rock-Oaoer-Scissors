@@ -1,32 +1,69 @@
 function getComputerChoice(){
-    const choices = ["Rock", "Paper", "Scissors"];
-    let n = Math.random() * 2;
+    const choices = ["rock", "paper", "scissors"];
+    let n = Math.floor(Math.random() * 3);
     return choices[n];
 }
 
 function playRound(playerSelection, computerSelection){
-    if (playerSelection == "Rock") {
-        if(computerSelection == "Paper") return "You Lose! Paper beats Rock";
-        if(computerSelection == "Scissors") return "You Win! Rock beats Scissors";
-        if(computerSelection == "Rock") return "Draw!";
+    if (playerSelection == "rock") {
+        if(computerSelection == "paper") {
+            cpu++;
+            return "You Lose! Paper beats Rock";
+        }
+        if(computerSelection == "scissors") {
+            player++;
+            return "You Win! Rock beats Scissors";
+        }
+        if(computerSelection == "rock") return "Draw!";
     } 
-    else if (playerSelection == "Paper") {
-        if(computerSelection == "Paper") return "Draw!";
-        if(computerSelection == "Scissors") return "You Lose! Scissors beats Paper";
-        if(computerSelection == "Rock") return "You Win! Paper beats Rock";
+    else if (playerSelection == "paper") {
+        if(computerSelection == "paper") return "Draw!";
+        if(computerSelection == "scissors") {
+            cpu++;
+            return "You Lose! Scissors beats Paper";
+        }
+        if(computerSelection == "rock") {
+            player++;
+            return "You Win! Paper beats Rock";
+        }
     }
-    else if (playerSelection == "Scissors") {
-        if(computerSelection == "Paper") return "You Win! Scissors beats Paper";
-        if(computerSelection == "Scissors") return "Draw!";
-        if(computerSelection == "Rock") return "You Lose! Rock beats Scissors";
+    else if (playerSelection == "scissors") {
+        if(computerSelection == "paper") {
+            player++
+            return "You Win! Scissors beats Paper";
+        }
+        if(computerSelection == "scissors") return "Draw!";
+        if(computerSelection == "rock") {
+            cpu++
+            return "You Lose! Rock beats Scissors";
+        }
     }
 }
 
-/*function playGame(){
+function playGame(){
+    for(let i = 0; i < 5; i++) {
+        const playerSelection = prompt("Enter your Choice!");
+        const computerSelection = getComputerChoice();
+        const result = playRound(playerSelection.toLowerCase(), computerSelection);
+        console.log(result, player, cpu);
+    }
 
-}*/
+    console.log(player, cpu);
+    if (player > cpu){
+        console.log("You Win! Your score is:", player , "-", cpu);
+    }
+    else if(cpu > player){
+        console.log("You Lose. Your Score is:", cpu , "-", player);
+    }
+    else {
+        console.log("Draw!");
+    }
+}
 
-const playerSelection = "Rock";
+/*const playerSelection = "Rock";
 const computerSelection = getComputerChoice();
 const result = playRound(playerSelection, computerSelection);
-console.log(result);
+console.log(result);*/
+var player = 0;
+var cpu = 0;
+playGame();
