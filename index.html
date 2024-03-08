@@ -1,1 +1,40 @@
-<script src="javascript.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="javascript.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="buttonPanel">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>        
+    </div>
+</body>
+<style>
+    .buttonPanel{
+        display: flex;
+        gap: 15px;
+        margin: 15px;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 50vh;
+    }
+    button{
+        padding: 10px;
+        font-size: 32px;
+        border-radius: 5px;
+    }
+    #score{
+        display: flex;
+        flex-direction: column;
+    }
+    #score div{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+</style>
+</html>
