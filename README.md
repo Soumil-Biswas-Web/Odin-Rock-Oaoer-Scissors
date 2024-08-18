@@ -13,6 +13,6 @@ You may open this project using a editor such as [VSCode.](https://code.visualst
 
 If you wish to  host your website using GitHub pages like in this Project, [follow the steps heere.](https://pages.github.com/)
 
-### How the Site Works
+## How the Site Works
 
 Play Rock papaer scissors against the CPU. Click on any of the three buttons (Rock, Paper, Scissors). First to reach a score of 5 wins.
