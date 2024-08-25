@@ -1,4 +1,4 @@
-# Odin-Rock-Oaoer-Scissors
+# Odin-Rock-Paper-Scissors
 Project Submission for the foundation Course in the Odin Project
 
 This is a simple Recipie Posting Website for practicing basic Javascript.
