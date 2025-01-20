@@ -128,9 +128,9 @@ function rpsOnClickRound(playerSelection){
 const computerSelection = getComputerChoice();
 const result = playRound(playerSelection, computerSelection);
 console.log(result);*/
-var player = 0;
-var cpu = 0;
-var score, h13, h14;
+let player = 0;
+let cpu = 0;
+let score, h13, h14;
 let result;
 
 const rock = document.querySelector('#rock');
