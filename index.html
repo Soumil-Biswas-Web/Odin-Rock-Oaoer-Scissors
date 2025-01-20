@@ -20,7 +20,7 @@
         margin: 15px;
         justify-content: space-evenly;
         align-items: center;
-        height: 50vh;
+        height: 40vh;
     }
     button{
         padding: 10px;
@@ -35,6 +35,12 @@
         width: 100%;
         display: flex;
         justify-content: space-around;
+    }
+
+    @media(max-width: 500px){
+        .buttonPanel{
+            flex-direction: column;
+        }
     }
 </style>
 </html>
