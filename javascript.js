@@ -124,13 +124,13 @@ function setGame(){
     const body = document.querySelector('body');
 
     // Create Field to display current round
-    const roundText = document.createElement('h3');
+    const roundText = document.createElement('h1');
     roundText.setAttribute('style', 'text-align:center')
     roundText.textContent = 'Round: ';
     round = document.createElement('span');
     round.textContent = roundCount;
     roundText.appendChild(round);
-    body.insertBefore(roundText, document.querySelector('.buttonPanel'));
+    body.insertBefore(roundText, score);
 
     // Text that appears when the CPU makes a selection
     cpuText = document.createElement('h2');
