@@ -91,7 +91,7 @@ function updateDiv(playerScore, cpuScore){
 
 function finishGame(){
     const body = document.querySelector('body');
-    const resultText = document.createElement('h2');
+    resultText = document.createElement('h2');
     resultText.setAttribute('style', 'text-align: center')
     if (player == 5){
         resultText.textContent = "Congratulations! You Won!"
@@ -102,14 +102,16 @@ function finishGame(){
     body.insertBefore(resultText, score);
 }
 
+function setGame(){
+    const body = document.querySelector('body');
+    resultText = document.createElement('h2');
+    resultText.setAttribute('style', 'text-align: center; text-wrap: pretty')
+    resultText.textContent = "Begin the Game by Clicking on any of the Buttons. The computer is ready whenever you are! First to reach 5 points wins!"
+    body.insertBefore(resultText, score);    
+}
+
 function updateScore(){
-    if (score == undefined){
-        createDiv();
-        updateDiv(player, cpu);
-    }
-    else {
-        updateDiv(player, cpu);
-    }
+    updateDiv(player, cpu);
     if (player == 5 || cpu == 5){
         finishGame();
     }
@@ -119,6 +121,7 @@ function rpsOnClickRound(playerSelection){
     if (player < 5 && cpu < 5){
         const computerSelection = getComputerChoice();
         result = playRound(playerSelection, computerSelection);
+        resultText.textContent = result;
         console.log(result);  
         updateScore();     
     }
@@ -130,7 +133,7 @@ const result = playRound(playerSelection, computerSelection);
 console.log(result);*/
 let player = 0;
 let cpu = 0;
-let score, h13, h14;
+let score, h13, h14, resultText;
 let result;
 
 const rock = document.querySelector('#rock');
@@ -141,3 +144,9 @@ paper.onclick = () => rpsOnClickRound("paper");
 
 const scissors = document.querySelector('#scissors');
 scissors.onclick = () => rpsOnClickRound("scissors");
+
+// Create Div to display text
+
+createDiv();
+
+setGame();
